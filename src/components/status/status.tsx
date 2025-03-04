@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './status.module.scss';
+import { TStatus } from '../../types';
 
 // Для чистоты кода я бы вынес это в отдельные файлы, на так как это тестовое, да и компонент не большой, оставлю тут
 // status.interface
@@ -9,18 +10,15 @@ interface Status {
   color: 'green' | 'red' | 'orange';
 }
 
-// status-types.type
-type StatusTypes = 'Scheduled' | 'Ongoing' | 'Finished';
-
 // statuses.data
-const statuses: Record<StatusTypes, Status> = {
+const statuses: Record<TStatus, Status> = {
   Scheduled: { name: 'Match preparing', color: 'orange' },
   Ongoing: { name: 'Live', color: 'green' },
   Finished: { name: 'Finished', color: 'red' }
 };
 
 interface Props {
-  status: StatusTypes;
+  status: TStatus;
 }
 
 export const Status: React.FC<Props> = ({ status }) => {

@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './assets/images/logo.svg';
 import s from './app.module.scss';
 import { Alert, Match, ReloadButton } from './components';
-import { matches } from './mocks';
+import { useMatches } from './hooks';
 
 export const App: React.FC = () => {
-  const [showError, setShowError] = useState(false);
+  const { matches, isLoading, isError, loadMatches } = useMatches();
 
   return (
     <>
       <header className={ s.header }>
         <img src={ logo } alt="Match Tracker" />
 
-        <Alert showError={ showError } />
+        <Alert showError={ isError } />
 
-        <ReloadButton onClick={ () => setShowError(value => !value) } />
+        <ReloadButton isLoading={ isLoading } onClick={ loadMatches } />
       </header>
 
       <main className={ s.list }>
         {
-          matches.data.matches.map((match) => (
+          matches?.map((match) => (
             <Match match={ match } key={ match.time } />
           ))
         }

@@ -1,0 +1,38 @@
+.btn {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #fff;
+  background: #EB0237;
+  padding: 15px 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: color .2s, background-color .2s;
+
+  &:hover {
+    background: #A01131;
+  }
+
+  &:disabled {
+    color: #787878;
+    background: #701328;
+    cursor: not-allowed;
+
+    .loader {
+      opacity: .5;
+      animation: loader 1s linear infinite;
+    }
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

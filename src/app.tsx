@@ -1,20 +1,25 @@
 import React from 'react';
 import logo from './assets/images/logo.svg';
 import s from './app.module.scss';
-import { ReloadButton } from './components';
+import { Match, ReloadButton } from './components';
+import { matches } from './mocks';
 
-const App: React.FC = () => (
-  <>
-    <header className={ s.header }>
-      <img src={ logo } alt="Match Tracker" />
+export const App: React.FC = () => {
+  return (
+    <>
+      <header className={ s.header }>
+        <img src={ logo } alt="Match Tracker" />
 
-      <ReloadButton />
-    </header>
+        <ReloadButton />
+      </header>
 
-    <main>
-
-    </main>
-  </>
-);
-
-export default App;
+      <main className={s.list}>
+        {
+          matches.data.matches.map((match) => (
+            <Match match={ match } key={ match.time } />
+          ))
+        }
+      </main>
+    </>
+  );
+};

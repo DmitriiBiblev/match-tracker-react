@@ -1,0 +1,18 @@
+.match {
+  background: #0B0E12;
+  padding: 16px 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

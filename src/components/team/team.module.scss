@@ -1,0 +1,12 @@
+.team {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+}

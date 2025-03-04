@@ -12,3 +12,9 @@ body {
   background: #06080C;
   padding: 42px;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
